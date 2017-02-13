@@ -4,7 +4,7 @@ package com.example.kebab.tictactoe.model;
  * Created by Kebab on 2017.02.13..
  */
 
-class TicTacToeModel {
+public class TicTacToeModel {
     private static TicTacToeModel instance = null;
     private TicTacToeModel() {
     }
@@ -30,19 +30,19 @@ class TicTacToeModel {
                 {EMPTY, EMPTY, EMPTY}};
     }
     public static short getFieldContent(int x,int y){
-        return getInstance().model[x][y];
+        return TicTacToeModel.getInstance().model[x][y];
     }
     public static void setFieldContent(int x,int y, short content){
-        getInstance().model[x][y] = content;
+        TicTacToeModel.getInstance().model[x][y] = content;
     }
     public static short getNextPlayer(){
         return getInstance().nextPlayer;
     }
     public static void changeNextPlayer(){
-        if (getInstance().getNextPlayer()==CIRCLE){
+        if (TicTacToeModel.getInstance().getNextPlayer()==CIRCLE){
             getInstance().nextPlayer = CROSS;
         }
-        else if (getInstance().getNextPlayer() ==CROSS){
+        else if (TicTacToeModel.getInstance().getNextPlayer() ==CROSS){
             getInstance().nextPlayer = CIRCLE;
         }
     }
